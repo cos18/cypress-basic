@@ -24,10 +24,20 @@ export default function Counter({ $app }: { $app: HTMLElement }) {
     }
   };
 
+  const onMinusButtonClicked = () => {
+    if (countValue > 8) {
+      countValue -= 1;
+    }
+    if (countDisplay) {
+      countDisplay.value = countValue.toString();
+    }
+  };
+
   const init = () => {
     render();
     countDisplay = document.querySelector('.count-display');
     document.querySelector('.plus-button')?.addEventListener('click', onPlusButtonClicked);
+    document.querySelector('.minus-button')?.addEventListener('click', onMinusButtonClicked);
   };
 
   init();
