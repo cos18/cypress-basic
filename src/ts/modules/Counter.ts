@@ -1,6 +1,6 @@
-export default function Counter({ $app }) {
-    const render = () => {
-        $app.innerHTML = `
+export default function Counter({ $app }: { $app: HTMLElement }) {
+  const render = () => {
+    $app.innerHTML = `
        <div class="container">
           <h1>ui counter</h1>
           <div class="counter">
@@ -9,9 +9,11 @@ export default function Counter({ $app }) {
             <a href="#" class="plus-button"><span>+</span></a>
           </div>
         </div>`;
-    };
-    const init = () => {
-        render();
-    };
-    init();
+  };
+
+  const init = () => {
+    render();
+  };
+
+  init();
 }
